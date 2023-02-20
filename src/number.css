@@ -1,0 +1,26 @@
+.box{
+    height:100vh;
+    width:100%;
+    border:2px solid red;
+    box-sizing: border-box;
+}
+.redbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:10px;
+    height:50px;
+    width:50px;
+    border:2px solid green;
+    color:white;
+}
+.yellowbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:10px;
+    height:50px;
+    height:50px;
+    width:50px;
+    border:2px solid green;     
+}
