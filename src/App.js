@@ -1,35 +1,60 @@
 import logo from './logo.svg';
 import './App.css';
-import Nogenerator from './Number';
+
+const head ={
+  textAlign:"center",
+}
 
 function App() {
-  const num_arr=[
-    {no:"0",color:"green"},
-    {no:"1",color:"Yellow"},
-    {no:"2",color:"red"},
-    {no:"3",color:"red"},
-    {no:"4",color:"green"},
-    {no:"5",color:"red"},
-    {no:"6",color:"green"},
-    {no:"7",color:"red"},
-    {no:"8",color:"green"},
-    {no:"9",color:"green"},
-    {no:"10",color:"Yellow"},
-    {no:"11",color:"red"},
-    {no:"12",color:"red"},
-    {no:"13",color:"green"},
-    {no:"14",color:"red"},
-    {no:"15",color:"green"},
-    {no:"16",color:"red"},
-    {no:"17",color:"green"},
-  ];
+  function checkPrime(n) {        
+    let  i, flag = true;
+    if(n<2){
+      flag = false;
+    }
+    for (i = 2; i <= n - 1; i++)
+        if (n % i == 0) {
+            flag = false;
+            break;
+        }     
+    // Check and display output
+    if (flag == true)
+        return true;
+    else
+        return false;
+}
+
+ //backgroundColor:checkPrime(i)? "red":i%2==0 ?"green":"yellow"}
   return (
-      <div className='box'>
-        {num_arr.map((number) =>(
-           <Nogenerator num={number.no} color={number.color} />
-        ))}
-      </div>
-    );
+    <>
+    <div >
+      <h1 style={head}>30 days of React</h1>
+      <h5 style={head}>Number generator</h5>
+    </div>
+    <div className='box' >
+      
+      {Array(32).fill("").map((number, i) => {
+        return(
+          <div style={{ 
+            height:"80px",
+          width:"80px",
+          color:"black",
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center",
+          border:"2px solid white",
+          backgroundColor:checkPrime(i)? "red":i%2==0 ?"green":"yellow",
+          transition:"width .2s",
+          boxShadow: "2px 2px 2px black",
+          }}>
+          {<h2 >{i}</h2>}
+        </div>
+        );
+      }
+    )}
+    </div>
+    </>
+    
+  );
 }
 
 export default App;

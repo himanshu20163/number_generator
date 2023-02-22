@@ -7,20 +7,19 @@
   pointer-events: none;
 }
 .box{
-  padding: 50px;
+  padding: 20px 180px;
   display: flex;
   justify-content: center;
-  height:150px;
-  width:150px;
-  border:2px solid red;
+  width:100%;
+  box-sizing: border-box;
   flex-wrap: wrap;
+  
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
